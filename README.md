@@ -1,2 +1,3 @@
-# GameBot1.0
-## test
+# GameBot1.0 (Alpha)
+
+Gamebot v1.0
