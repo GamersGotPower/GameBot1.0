@@ -7,7 +7,7 @@ const fs = require("fs");
 //Ready
 client.on('ready', message=> {
    console.log("Up")
-   client.user.setGame("games | " + config.prefix + "help"
+   client.user.setGame("games | " + config.prefix + "help");
 });
 
 //Commands
@@ -19,35 +19,35 @@ client.on('message', message => {
       embed.setAuthor("🏓 Pong!");
       embed.setColor(0xcd201f)
     message.channel.send({embed});
-  } else
+  } else {
      
 if(message.content === config.prefix + "help owner") {
    if (message.author.id !== config.ownerID) return;
       const embed = new Discord.RichEmbed()
-        .setColor(0xcd201f)
-        .setTitle("`Help for Owners`")
-        .setDescription("--------------------")
-        .addField(config.prefix + "name", "Changes username", true)
-        .addField(config.prefix + "game", "Sets BOT game", true)
+        embed.setColor(0xcd201f)
+        embed.setTitle("`Help for Owners`")
+        embed.setDescription("--------------------")
+        embed.addField(config.prefix + "name", "Changes username", true)
+        embed.addField(config.prefix + "game", "Sets BOT game", true)
       message.channel.send({embed})
-  } else
+  } else {
      
-     if (message.content.startsWith(config.prefix + "help admin") {
-         if (!message.member.hasPermission("ADMINISTRATOR") return;
+     if (message.content.startsWith(config.prefix + "help admin")) {
+         if (!message.member.hasPermission("ADMINISTRATOR")) return;
          const embed = new Discord.RichEmbed()
         .setTitle("`Help for Admins`")
         .setDescription("Currently none.")
          message.channel.send({embed})
-         } else
+    } else {
 
   if(message.content === config.prefix + "help") {
     const embed = new Discord.RichEmbed()
-      .setColor(0xcd201f)
-      .setTitle("`Help for GameBot 1.0`")
-      .setDescription("--------------------"
-      .addField(config.prefix + "ping", "Says the bots ping", true)
+      embed.setColor(0xcd201f)
+      embed.setTitle("`Help for GameBot 1.0`")
+      embed.setDescription("--------------------")
+      embed.addField(config.prefix + "ping", "Says the bots ping", true)
     message.channel.send({embed})
-  } else
+  } else {
 
   
   if(message.content === config.prefix + "name") {
@@ -56,7 +56,7 @@ if(message.content === config.prefix + "help owner") {
         let newname = args.join(" ");
         client.user.setUsername(newname)
         message.channel.send("Changed name to " + newname)
-  } else
+  } else {
      
   if(message.content.startsWith(config.prefix + 'prefix')) {
     if (message.author.id !== config.ownerID) return;
@@ -72,7 +72,7 @@ if(message.content === config.prefix + "help owner") {
       // Now we have to save the file.
       fs.writeFile('./config.json', JSON.stringify(config), (err) => {if(err) console.error(err);
  });
-} else
+} else {
    
    if (message.content.startsWith(config.prefix + "game")) {
       if (message.author.id !== config.ownerID) return;
@@ -81,6 +81,12 @@ if(message.content === config.prefix + "help owner") {
       client.user.setGame(newgame)
       message.channel.send("Set game to " + newgame)
    }
+}
+  }
+}
+    }
+  }
+  }
 });
 
 client.login(config.token);
