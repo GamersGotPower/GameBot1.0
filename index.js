@@ -7,6 +7,7 @@ const fs = require("fs");
 //Ready
 client.on('ready', message=> {
    console.log("Up")
+   client.user.setGame("games | " + config.prefix + "help"
 });
 
 //Commands
@@ -27,6 +28,7 @@ if(message.content === config.prefix + "help owner") {
         .setTitle("`Help for Owners`")
         .setDescription("--------------------")
         .addField(config.prefix + "name", "Changes username", true)
+        .addField(config.prefix + "game", "Sets BOT game", true)
       message.channel.send({embed})
   } else
      
@@ -70,7 +72,15 @@ if(message.content === config.prefix + "help owner") {
       // Now we have to save the file.
       fs.writeFile('./config.json', JSON.stringify(config), (err) => {if(err) console.error(err);
  });
-}
+} else
+   
+   if (message.content.startsWith(config.prefix + "game")) {
+      if (message.author.id !== config.ownerID) return;
+      let args = message.content.split(" ").slice(1);
+      let newgame = args.join(" ");
+      client.user.setGame(newgame)
+      message.channel.send("Set game to " + newgame)
+   }
 });
 
 client.login(config.token);
