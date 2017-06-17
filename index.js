@@ -18,35 +18,44 @@ client.on('message', message => {
       embed.setAuthor("🏓 Pong!");
       embed.setColor(0xcd201f)
     message.channel.send({embed});
-  }
+  } else
+     
+if(message.content === config.prefix + "help owner") {
+   if (message.author.id !== config.ownerID) return;
+      const embed = new Discord.RichEmbed()
+        .setColor(0xcd201f)
+        .setTitle("`Help for Owners`")
+        .setDescription("--------------------")
+        .addField(config.prefix + "name", "Changes username", true)
+      message.channel.send({embed})
+  } else
+     
+     if (message.content.startsWith(config.prefix + "help admin") {
+         if (!message.member.hasPermission("ADMINISTRATOR") return;
+         const embed = new Discord.RichEmbed()
+        .setTitle("`Help for Admins`")
+        .setDescription("Currently none.")
+         message.channel.send({embed})
+         } else
 
   if(message.content === config.prefix + "help") {
-    const embed = new Discord.RichEmbed();
-      embed.setColor(0xcd201f)
-      embed.setTitle("GameBot 1.0");
-      embed.setAuthor("Help");
-      embed.setDescription("--------------------");
-      embed.addField(config.prefix + "ping", "Says the bots ping", true);
-    message.channel.send({embed});
-  }
+    const embed = new Discord.RichEmbed()
+      .setColor(0xcd201f)
+      .setTitle("`Help for GameBot 1.0`")
+      .setDescription("--------------------"
+      .addField(config.prefix + "ping", "Says the bots ping", true)
+    message.channel.send({embed})
+  } else
 
-  if(message.content === config.prefix + "adminhelp") {
-      const embed = new Discord.RichEmbed();
-        embed.setColor(0xcd201f)
-        embed.setTitle("GameBot 1.0");
-        embed.setAuthor("Help");
-        embed.setDescription("--------------------");
-        embed.addField(config.prefix + "gb-name", "Owner only changes username", true);
-      message.channel.send({embed});
-  }
-
+  
   if(message.content === config.prefix + "name") {
     if(message.author.id !== config.ownerID) return;
         let args = message.content.split(" ").slice(1);
         let newname = args.join(" ");
         client.user.setUsername(newname)
         message.channel.send("Changed name to " + newname)
-  }
+  } else
+     
   if(message.content.startsWith(config.prefix + 'prefix')) {
     if (message.author.id !== config.ownerID) return;
       let args = message.content.split(' ').slice(1);
