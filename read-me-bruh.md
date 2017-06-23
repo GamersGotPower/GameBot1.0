@@ -14,7 +14,7 @@ Gamebot v1.0 Alpha is a Discord Bot that is currently in development.
 + Moderation Tools
 + Features set as Add-Ons
 + People run an instance of the bot
-+ Config.JSON file for above
++ Config.JSON file for above (Completed)
   - Owner ID
   - Prefix
   - Token
@@ -23,4 +23,4 @@ Gamebot v1.0 Alpha is a Discord Bot that is currently in development.
 + More to be found
 
 ## Release Date
-- Not Planned Yet
+- Possibly at September-October
